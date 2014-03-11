@@ -1,0 +1,12 @@
+input/output: 
+    read/write json?
+    save to local filesystem
+    
+improve style: prettify
+
+edit mode just toggles, change portlets not in edit mode into edit mode
+
+make into website: 
+    about
+    tweet functionality?
+

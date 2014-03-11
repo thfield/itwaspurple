@@ -24,7 +24,7 @@ body {
     margin-bottom: 0.5rem;
     position: relative;
     background: #8f5fa5;
-  
+    height: 1rem;
 }
 .portlet-toggle {
     position: absolute;
@@ -38,6 +38,13 @@ body {
     background: #eee;
     margin: 0.5rem;
 }
+.editContent {
+}
+textarea {
+    width: 100%;
+        min-height: inherit;
+
+}
 .portlet-placeholder {
     border: 1px dotted black;
     border-radius: 0.5rem;
@@ -50,6 +57,9 @@ button {
 }
 .controls {
     margin: auto;
+}
+.hidden {
+    display: none;
 }
 .unselectable {
     -webkit-user-select: none;  /* Chrome all / Safari all */

@@ -1,20 +1,27 @@
   $(document).ready(function () {
       function test() {
           $("#test").toggleClass("tested");
-      }; /* */
+          // test function goes here, activated by "test" button
+          
+      };
 
-      $(".column").sortable({
+      var itemHTML = '<div class="portlet"><div class="portlet-header"></div><div class="portlet-content"><div class="displayContent"></div><textarea class="editContent hidden"></textarea></div></div>'
+
+// jquery and jquery-ui commands
+      $(".holder").sortable({
           connectWith: ".holder",
           handle: ".portlet-header",
-          cancel: ".portlet-toggle",
-          placeholder: "portlet-placeholder ui-corner-all"
+          placeholder: "portlet-placeholder"
       });
 
-      $(".portlet")
-          .addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all")
-          .find(".portlet-header")
-          .addClass("ui-widget-header ui-corner-all");
+
+// called on scriptload to copy value from .edit to .display
+      $('.portlet-content').each(function () {
+          $foo = $(this).children('.displayContent').text();
+          $(this).children('.editContent').val($foo);
+      });
       
+// button-function bindings
       $(document).on('click', '#tester', function () {
           test();
       });
@@ -34,6 +41,11 @@
           emptytrash();
       });
 
+      $(document).on('click', '#edit', function () {
+          editMode();
+      });
+
+// control functions      
       function reverse() {
           var list = $(".portlets>.portlet").get().reverse();
           $(".portlets").empty();
@@ -54,6 +66,15 @@
           $(".trashcan").children('.portlet').remove();
       };
 
-      var itemHTML = '<div class="portlet"><div class="portlet-header unselectable">New</div><div class="portlet-content">123456789 </div></div>'
+      function editMode() {
+          $('.portlet-content').each(function () {
+              $foo = $(this).children('.editContent').val();
+              $(this).children('.displayContent').text($foo);
+          });
+          $('.editContent').toggleClass("hidden");
+          $('.displayContent').toggleClass('hidden');
+      };
+
+
 
   });
