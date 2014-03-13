@@ -1,15 +1,30 @@
+/* jquery-ui style.css start */
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+	content: "";
+	display: table;
+	border-collapse: collapse;
+}
+.ui-helper-clearfix:after {
+	clear: both;
+}
+.ui-helper-clearfix {
+	min-height: 0; /* support: IE7 */
+}
+/* jquery-ui style.css end */
+
 body {
     background: #777;
 }
 .wrapper {
-    width: 70%;
+    width: 70%; /**/
     margin: auto;
-    border: 1px solid red;
+    border: 1px solid red; /**/
 }
 .column {
     width: 40rem;
     float: left;
-    border: 1px dashed black;
+    border: 1px dashed black; /**/
     margin: auto;
 }
 .portlet {
@@ -42,7 +57,7 @@ body {
     min-height: inherit;
 }
 .portlet-placeholder {
-    border: 1px dotted black;
+    /*border: 1px dotted black; /**/
     border-radius: 0.5rem;
     margin: 1rem;
     height: 4rem;
@@ -57,21 +72,16 @@ button {
 .hidden {
     display: none;
 }
-.unselectable {
-    -webkit-user-select: none;
-    /* Chrome all / Safari all */
-    -moz-user-select: none;
-    /* Firefox all */
-    -ms-user-select: none;
-    /* IE 10+ */
-    /* No support for these yet, use at own risk */
-    -o-user-select: none;
-    user-select: none;
-}
 .tested {
     background: yellow;
 }
 .trashcan {
     min-height: 3rem;
     background: #b93f3f;
+}
+#test {
+    width: 200px;
+    height:40px;
+    margin: auto;
+    border: 1px dotted black;
 }

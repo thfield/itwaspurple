@@ -4,7 +4,7 @@ input/output:
     
 improve style: prettify
 
-edit mode just toggles, change portlets not in edit mode into edit mode
+jquery callback after ajax request/dom update: http://stackoverflow.com/questions/16062899/jquery-doesnt-work-after-ajax-loads
 
 make into website: 
     about
