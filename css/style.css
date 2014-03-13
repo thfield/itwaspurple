@@ -17,7 +17,6 @@ body {
     padding: 0.3rem;
     background: #ccc;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-
 }
 .portlet-header {
     padding: 0.2rem 0.3rem;
@@ -38,12 +37,9 @@ body {
     background: #eee;
     margin: 0.5rem;
 }
-.editContent {
-}
-textarea {
+.editContent {} textarea {
     width: 100%;
-        min-height: inherit;
-
+    min-height: inherit;
 }
 .portlet-placeholder {
     border: 1px dotted black;
@@ -62,12 +58,15 @@ button {
     display: none;
 }
 .unselectable {
-    -webkit-user-select: none;  /* Chrome all / Safari all */
-  -moz-user-select: none;     /* Firefox all */
-  -ms-user-select: none;      /* IE 10+ */
-  /* No support for these yet, use at own risk */
-  -o-user-select: none;
-  user-select: none;
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    /* No support for these yet, use at own risk */
+    -o-user-select: none;
+    user-select: none;
 }
 .tested {
     background: yellow;
