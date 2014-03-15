@@ -2,7 +2,7 @@ $(document).ready(function () {
     function test() {
         $("#test").toggleClass("tested");
         // test function goes here, activated by "test" button
-       
+
     };
 
     function testanimate() {
@@ -112,7 +112,7 @@ $(document).ready(function () {
             $bar.fadeIn(400)
         });
     };
-    
+
     function editMode() {
         activeEdit = !activeEdit;
         var $bar = $('.portlet-content');
@@ -120,10 +120,10 @@ $(document).ready(function () {
             $foo = $(this).children('.editContent').val();
             $(this).children('.displayContent').text($foo);
         });
-       
-            $bar.children('.editContent').toggleClass("hidden");
-            $bar.children('.displayContent').toggleClass('hidden');
-            
+
+        $bar.children('.editContent').toggleClass("hidden");
+        $bar.children('.displayContent').toggleClass('hidden');
+
     };
 
 
