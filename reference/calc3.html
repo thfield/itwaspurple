@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>Options Cost Calculator</title>
+        <link rel="stylesheet" type="text/css" href="calc3-style.css"/>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+        
+        <!-- begin Jquery links -->
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" type="text/css" media="all" /> 
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+        <!-- end Jquery links -->
+        
+	</head>
+	<body>
+        <h1>Calculate Options</h1>
+        <div class="superwrapper">
+        <div class="wrapper">
+            
+            <div class="item">
+                <div class="itemRemove editing">-</div>
+                <div class="nameContainer">
+                    <div class="itemName view">Asdf</div>
+                    <input class="editing" type="text" name="newItemName" value="Asdf" />
+                </div>
+                <div class="testButton">edit</div>
+                <div class="optionContainer optionActive">
+                    <div class="itemOption view">Dog</div>
+                    <input class="editing" type="text" name="optionName" value="Dog" />
+                    <input class="editing" type="number" name="optionPrice" value="100" />
+                </div>
+                <div class="addOption editing">Add</div>
+                <div class="removeOption editing">Remove</div>
+                <div class="spacer"></div>
+                <div id="foo">Foo</div>
+                <div class="itemPrice">100</div>
+            </div>
+            
+            <div class="item active">
+                <div class="itemRemove editing">-</div>
+                <div class="nameContainer">
+                    <div class="itemName view">gadget</div>
+                    <input class="editing" type="text" name="newItemName" value="gadget" />
+                </div>
+                <div class="itemEdit">edit</div>
+                <div class="optionContainer optionActive">
+                    <div class="itemOption view">Blue</div>
+                    <input class="editing" type="text" name="optionName" value="" />
+                    <input class="editing" type="number" name="optionPrice" value="100" />
+                </div>
+                <div class="optionContainer">
+                    <div class="itemOption view">Red</div>
+                    <input class="editing" type="text" name="optionName" value="Red" />
+                    <input class="editing" type="number" name="optionPrice" value="200" />
+                </div>
+                <div class="addOption editing">Add</div>
+                <div class="removeOption editing">Remove</div>
+                <div class="spacer"></div>
+                <div class="itemPrice">100</div>
+            </div>
+            
+             <div class="item active">
+                <div class="newItem">+</div>
+                <div class="spacer"></div>
+                <div class="subtotal">0</div>
+            </div>
+            
+            <div class="item">
+                <div class="spacer"></div>
+                <div class="taxEdit">edit</div>
+                <input class="taxEditing" type="number" name="editTax" value="8.75" />
+                <div class="taxView">tax <span class="taxrate">8.75</span>% &nbsp;</div>
+                <div class="tax">0</div>
+            </div>
+            
+            <div class="item active">
+                <div class="spacer"></div>
+                <div class="total">0</div>
+                                  
+            </div>
+            
+        </div>
+        </div>
+        <script type="text/javascript" src="calc3-script.js"></script>
+	</body>
+</html>

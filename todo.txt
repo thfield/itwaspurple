@@ -1,0 +1,14 @@
+input/output: 
+    read/write json?
+    save to local filesystem
+    
+improve style: prettify
+
+jquery callback after ajax request/dom update: http://stackoverflow.com/questions/16062899/jquery-doesnt-work-after-ajax-loads
+
+make into website: 
+    about
+    tweet functionality?
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="URL_share" data-text="text goes here" data-size="large" data-count="none">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

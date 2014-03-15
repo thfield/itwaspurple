@@ -1,0 +1,87 @@
+/* jquery-ui style.css start */
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+	content: "";
+	display: table;
+	border-collapse: collapse;
+}
+.ui-helper-clearfix:after {
+	clear: both;
+}
+.ui-helper-clearfix {
+	min-height: 0; /* support: IE7 */
+}
+/* jquery-ui style.css end */
+
+body {
+    background: #777;
+}
+.wrapper {
+    width: 70%; /**/
+    margin: auto;
+    border: 1px solid red; /**/
+}
+.column {
+    width: 40rem;
+    float: left;
+    border: 1px dashed black; /**/
+    margin: auto;
+}
+.portlet {
+    margin: 1rem 1rem;
+    padding: 0.3rem;
+    background: #ccc;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+.portlet-header {
+    padding: 0.2rem 0.3rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    background: #8f5fa5;
+    height: 1rem;
+}
+.portlet-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+}
+.portlet-content {
+    padding: 0.5rem;
+    border-radius: 5px;
+    background: #eee;
+    margin: 0.5rem;
+}
+.editContent {} textarea {
+    width: 100%;
+    min-height: inherit;
+}
+.portlet-placeholder {
+    /*border: 1px dotted black; /**/
+    border-radius: 0.5rem;
+    margin: 1rem;
+    height: 4rem;
+    background: #919191;
+}
+button {
+    color: #50375c;
+}
+.controls {
+    margin: auto;
+}
+.hidden {
+    display: none;
+}
+.tested {
+    background: yellow;
+}
+.trashcan {
+    min-height: 3rem;
+    background: #b93f3f;
+}
+#test {
+    width: 200px;
+    height:40px;
+    margin: auto;
+    border: 1px dotted black;
+}
