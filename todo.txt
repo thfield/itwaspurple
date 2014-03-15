@@ -1,6 +1,7 @@
 ### to do
 save to local filesystem
     read/write as json?
+add delete button to content areas    
       
 improve website 
     prettify style
