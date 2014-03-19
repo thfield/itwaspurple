@@ -23,7 +23,7 @@ body {
 }
 .column {
     width: 40rem;
-    float: left;
+    /*float: left; /**/
     border: 1px dashed black; /**/
     margin: auto;
 }
@@ -34,11 +34,11 @@ body {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 .portlet-header {
-    padding: 0.2rem 0.3rem;
+    padding: 0.3rem; /**/
     margin-bottom: 0.5rem;
     position: relative;
     background: #8f5fa5;
-    height: 1rem;
+    height: 1.5rem;
 }
 .portlet-toggle {
     position: absolute;
@@ -62,6 +62,17 @@ body {
     margin: 1rem;
     height: 4rem;
     background: #919191;
+}
+.portlet-remove {
+    height: 1rem;
+    width: 1rem;
+    /*border: 1px solid black;/**/
+    background-color: #ccc;
+    padding: 0.2rem;
+    float: right;
+    font-family: sans-serif;
+    text-align: center;
+    border-radius: 0.2rem
 }
 button {
     color: #50375c;

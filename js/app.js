@@ -2,16 +2,16 @@ $(document).ready(function () {
     function test() {
         $("#test").toggleClass("tested");
         // test function goes here, activated by "test" button
-
     };
 
     function testanimate() {
         animateSwap();
-
     };
-    var itemHTML = '<div class="portlet"><div class="portlet-header"></div><div class="portlet-content"><div class="displayContent"></div><textarea class="editContent hidden"></textarea></div></div>'
-    var itemHTMLedit = '<div class="portlet"><div class="portlet-header"></div><div class="portlet-content"><div class="displayContent hidden"></div><textarea class="editContent"></textarea></div></div>'
-
+    
+    var itemHTML = '<div class="portlet"><div class="portlet-header"><div class="portlet-remove hidden">X</div></div><div class="portlet-content"><div class="displayContent"></div><textarea class="editContent hidden"></textarea></div></div>'
+    var itemHTMLedit = '<div class="portlet"><div class="portlet-header"><div class="portlet-remove">X</div></div><div class="portlet-content"><div class="displayContent hidden"></div><textarea class="editContent"></textarea></div></div>'
+    var tweetHTML= '<div>tweet</div>'
+    
     //
     // jquery and jquery-ui commands
     //
@@ -45,7 +45,7 @@ $(document).ready(function () {
     $(document).on('click', '#delete', function () {
         deleteall();
     });
-
+    
     $(document).on('click', '#new', function () {
         newentry();
     });
@@ -60,6 +60,7 @@ $(document).ready(function () {
     $(document).on('click', '#editanimate', function () {
         editModeAnimate();
     });
+    
 
     //
     // control functions      
@@ -86,7 +87,14 @@ $(document).ready(function () {
     function deleteall() {
         $(".portlets").empty();
     };
-
+    
+    $( ".portlet-remove" ).click(function() {
+    //    $(this).toggleClass('tested');
+        $(this).parents('.portlet').fadeOut(400,function(){
+            $(this).remove();
+        });
+    });
+    
     function newentry() {
         if (activeEdit == true) {
             $(".portlets").append(itemHTMLedit);
@@ -106,10 +114,11 @@ $(document).ready(function () {
             $foo = $(this).children('.editContent').val();
             $(this).children('.displayContent').text($foo);
         });
-        $bar.fadeOut(400, function () {
+        $bar.parent().fadeOut(400, function () {
             $bar.children('.editContent').toggleClass("hidden");
             $bar.children('.displayContent').toggleClass('hidden');
-            $bar.fadeIn(400)
+            $('.portlet-remove').toggleClass('hidden');
+            $bar.parent().fadeIn(400)
         });
     };
 
@@ -123,7 +132,7 @@ $(document).ready(function () {
 
         $bar.children('.editContent').toggleClass("hidden");
         $bar.children('.displayContent').toggleClass('hidden');
-
+        $('.portlet-remove').toggleClass('hidden');
     };
 
 
