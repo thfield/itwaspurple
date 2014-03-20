@@ -6,8 +6,11 @@ improve website
   prettify style
   about section: examples, inspiration
   // tweet functionality? edit: too much hassle to get working
-improve ui    
+  svg sprite for add/delete/reverse buttons
+improve ui
+  animate delete button
   "reverse" transition should shuffle entries
+    see http://tympanus.net/Development/SimpleDropDownEffects/index6.html
   "edit" could flip the cards
 switch to border box sizing
 make entry card uniform size
@@ -19,9 +22,12 @@ controls
 
 
 ### issues 
-animation breaks functionality 
+//animation breaks functionality 
   dragging to trash breaks reverse animation but not edit
   adding entry breaks animation
-  culprit:
+  probable culprit:
     jquery callback after ajax request/dom update
     http://stackoverflow.com/questions/16062899/jquery-doesnt-work-after-ajax-loads
+    *** http://stackoverflow.com/questions/16512016/event-listener-in-elements-appended-after-dom-content-loaded
+    ** http://davidwalsh.name/event-delegate
+edit with animation only works with addition of even number of new portlets
