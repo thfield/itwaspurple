@@ -14,39 +14,43 @@
 
 <body>
 
-    <div id="test">this is the test div</div>
-    <button class="tester">test</button>
+    <div id="test">this is the <button class="tester">test</button> div</div>
+    
+    <button class="edit">Edit Mode</button>
+    <button class="reverse">Reverse</button>
 
     <div class="wrapper ui-helper-clearfix">
 
         <div class="column controls">
-            <button class="edit">Edit Mode</button>
-            <button class="reverse">Reverse</button>
+            
             <span class="spritewrapper">
-                <img src="images/sprites.png" class="add sprite sprite-add" />
+                <img src="images/sprites.png" class="add sprite sprite-add" title="add new" />
             </span>
 
             <span class="spritewrapper">
-                <img src="images/sprites.png" class="editanimate sprite sprite-edit" />
+                <img src="images/sprites.png" class="editanimate sprite sprite-edit" title="edit mode" />
             </span>
 
             <span class="spritewrapper">
-                <img src="images/sprites.png" class="reverseanimate sprite sprite-reverse" />
+                <img src="images/sprites.png" class="reverseanimate sprite sprite-reverse" title="reverse" />
             </span>
             <span class="spritewrapper">
-                <img src="images/sprites.png" class="delete sprite sprite-delete" />
+                <img src="images/sprites.png" class="delete sprite sprite-delete" title="delete all" />
             </span>
 
             <span class="spritewrapper">
-                <img src="images/sprites.png" class="save sprite sprite-save" />
+                <img src="images/sprites.png" class="save sprite sprite-save" title="save" />
             </span>
             <span class="spritewrapper">
-                <img src="images/sprites.png" class="load sprite sprite-load" />
+                <img src="images/sprites.png" class="load sprite sprite-load" title="load"/>
             </span>
         </div>
 
         <div class="column trashcan holder">drag here to remove
-            <button id="remove">Empty the trash</button>
+            <br/>
+            <span class="spritewrapper">
+                <img id="remove" src="images/sprites.png" class="remove sprite sprite-trash" title="empty trash" />
+            </span>
         </div>
 
         <div class="column portlets holder">
@@ -105,8 +109,9 @@
 
         <div class="column controls">
             <span class="spritewrapper">
-                <img src="images/sprites.png" class="add sprite sprite-add" />
+                <img src="images/sprites.png" class="add sprite sprite-add" title="add new" />
             </span>
+            
         </div>
 
     </div>

@@ -1,6 +1,6 @@
 $(document).ready(function () {
     function test() {
-        $(".test").toggleClass("tested");
+        $("#test").toggleClass("tested");
         // test function goes here, activated by "test" button
 
     };

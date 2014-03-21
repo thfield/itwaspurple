@@ -19,6 +19,9 @@ make entry card uniform size
 controls
   add new entry button at bottom of card stack
 add counter to 140 characters
+change sprite sheet to individual images, use compass sheets
+  http://webdesign.tutsplus.com/articles/css-sprite-sheets-best-practices-tools-and-helpful-applications--webdesign-8340
+  http://webdesign.tutsplus.com/tutorials/sass-and-compass-for-web-designers-grids-and-sprites--webdesign-6376
 
 
 ### issues 
