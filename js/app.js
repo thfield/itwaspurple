@@ -1,6 +1,6 @@
 $(document).ready(function () {
     function test() {
-        $("#test").toggleClass("tested");
+        $(".test").toggleClass("tested");
         // test function goes here, activated by "test" button
 
     };
@@ -34,28 +34,28 @@ $(document).ready(function () {
     //
     // button-function bindings
     //
-    $(document).on('click', '#new', function () {
+    $(document).on('click', '.add', function () {
         newentry();
     });
-    $(document).on('click', '#edit', function () {
+    $(document).on('click', '.edit', function () {
         editMode();
     });
-    $(document).on('click', '#editanimate', function () {
+    $(document).on('click', '.editanimate', function () {
         editModeAnimate();
     });
-    $(document).on('click', '#reverse', function () {
+    $(document).on('click', '.reverse', function () {
         reverseList();
     });
-    $(document).on('click', '#reverseanimate', function () {
+    $(document).on('click', '.reverseanimate', function () {
         reverseListAnimate();
     });
-    $(document).on('click', '#delete', function () {
+    $(document).on('click', '.delete', function () {
         deleteall();
     });
-    $(document).on('click', '#tester', function () {
+    $(document).on('click', '.tester', function () {
         test();
     });
-    $(document).on('click', '#remove', function () {
+    $(document).on('click', '.remove', function () {
         emptytrash();
     });
 

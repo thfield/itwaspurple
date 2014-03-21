@@ -18,7 +18,7 @@ make entry card uniform size
   drag placeholder same size
 controls
   add new entry button at bottom of card stack
-
+add counter to 140 characters
 
 
 ### issues 

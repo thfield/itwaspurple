@@ -13,28 +13,42 @@
 </head>
 
 <body>
+
     <div id="test">this is the test div</div>
-    
-    <a href="https://twitter.com/share" class="twitter-share-button" data-via="your_screen_name" data-lang="en" data-count="none">Tweet</a>
-        
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <button class="tester">test</button>
 
     <div class="wrapper ui-helper-clearfix">
 
         <div class="column controls">
-            <button id="new">Add New Entry</button>
-            <button id="edit">Edit Mode</button>
-            <button id="editanimate">Edit w/animation</button>
-            <button id="reverse">Reverse</button>
-            <button id="reverseanimate">reverse w/animation</button>
-            <button id="delete">Delete All</button>
-            <button id="tester">test</button>
-            <button id="save">Save</button>
-            <button id="load">Load</button>
+            <button class="edit">Edit Mode</button>
+            <button class="reverse">Reverse</button>
+            <span class="spritewrapper">
+                <img src="images/sprites.png" class="add sprite sprite-add" />
+            </span>
+
+            <span class="spritewrapper">
+                <img src="images/sprites.png" class="editanimate sprite sprite-edit" />
+            </span>
+
+            <span class="spritewrapper">
+                <img src="images/sprites.png" class="reverseanimate sprite sprite-reverse" />
+            </span>
+            <span class="spritewrapper">
+                <img src="images/sprites.png" class="delete sprite sprite-delete" />
+            </span>
+
+            <span class="spritewrapper">
+                <img src="images/sprites.png" class="save sprite sprite-save" />
+            </span>
+            <span class="spritewrapper">
+                <img src="images/sprites.png" class="load sprite sprite-load" />
+            </span>
         </div>
+
         <div class="column trashcan holder">drag here to remove
             <button id="remove">Empty the trash</button>
         </div>
+
         <div class="column portlets holder">
 
             <div class="portlet">
@@ -42,7 +56,7 @@
                     <div class="portlet-remove hidden">X</div>
                 </div>
                 <div class="portlet-content">
-                    <div class="displayContent">123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 </div>
+                    <div class="displayContent">123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789</div>
                     <textarea class="editContent hidden"></textarea>
                 </div>
             </div>
@@ -88,11 +102,14 @@
             </div>
 
         </div>
-        <div class="column controls">
-<button id="new">Add New Entry</button>
-</div>
-    </div>
 
+        <div class="column controls">
+            <span class="spritewrapper">
+                <img src="images/sprites.png" class="add sprite sprite-add" />
+            </span>
+        </div>
+
+    </div>
 
 </body>
 
