@@ -1,12 +1,13 @@
 ### to do
 save/load to local filesystem
   read/write as json?
-  //add delete button to content areas    
+save should make trashbin items separate
+//add delete button to content areas    
 improve website 
   prettify style
   about section: examples, inspiration
   // tweet functionality? edit: too much hassle to get working
-  svg sprite for add/delete/reverse buttons
+  svg sprite for buttons
 improve ui
   animate delete button
   "reverse" transition should shuffle entries
@@ -22,7 +23,7 @@ add counter to 140 characters
 change sprite sheet to individual images, use compass sheets
   http://webdesign.tutsplus.com/articles/css-sprite-sheets-best-practices-tools-and-helpful-applications--webdesign-8340
   http://webdesign.tutsplus.com/tutorials/sass-and-compass-for-web-designers-grids-and-sprites--webdesign-6376
-
+lock down sizes to rems
 
 ### issues 
 //animation breaks functionality 
@@ -34,3 +35,4 @@ change sprite sheet to individual images, use compass sheets
     *** http://stackoverflow.com/questions/16512016/event-listener-in-elements-appended-after-dom-content-loaded
     ** http://davidwalsh.name/event-delegate
 edit with animation only works with addition of even number of new portlets
+edit with animation doesn't work when last portlet is removed

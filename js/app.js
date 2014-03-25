@@ -2,14 +2,17 @@ $(document).ready(function () {
     function test() {
         $("#test").toggleClass("tested");
         // test function goes here, activated by "test" button
-
+         $('#test2').empty();
     };
 
     /*    function testanimate() {
         animateSwap();
     };
 */
-
+    
+    //
+    // HTML snippits
+    //
     var itemHTML = '<div class="portlet"><div class="portlet-header"><div class="portlet-remove hidden">X</div></div><div class="portlet-content"><div class="displayContent"></div><textarea class="editContent hidden"></textarea></div></div>'
     var itemHTMLedit = '<div class="portlet"><div class="portlet-header"><div class="portlet-remove">X</div></div><div class="portlet-content"><div class="displayContent hidden"></div><textarea class="editContent"></textarea></div></div>'
 
@@ -24,7 +27,7 @@ $(document).ready(function () {
     });
 
     //
-    // called on scriptload to copy values from .edit to .display
+    // called on pageload to copy values from .edit to .display
     //
     $('.portlet-content').each(function () {
         $foo = $(this).children('.displayContent').text();
@@ -58,9 +61,12 @@ $(document).ready(function () {
     $(document).on('click', '.remove', function () {
         emptytrash();
     });
-
-
-
+    $(document).on('click', '.subtract', function () {
+        deleteLast();
+    });
+    $(document).on('click', '.save', function () {
+        collect();
+    });
 
     //
     // control functions      
@@ -86,7 +92,12 @@ $(document).ready(function () {
     function deleteall() {
         $(".portlets").empty();
     };
-
+    
+    function deleteLast() {
+        $('.portlet:last-of-type').fadeOut(400,function() {
+            $(this).remove();
+        });
+    };
 
     // portlet-remove button binding is added to .portlets div so newly created portlets still have function
     $(".portlets").on("click", ".portlet-remove", function (event) {
@@ -99,7 +110,6 @@ $(document).ready(function () {
             // use instead of .remove() to keep portlet in DOM, so 'undelete' can happen
         });
     });
-
 
     function newentry() {
         if (activeEdit == true) {
@@ -134,5 +144,21 @@ $(document).ready(function () {
         $('.portlet-remove').toggleClass('hidden');
     };
 
+    function collect() {
+        $('#test2').empty();
+        var entries = $(".displayContent").clone();
+        $.each(entries, function (i) {
+            $("#test2").append(entries[i]);
+        }); 
+        entries.length=0;/**/
+        //$('#test2').text(entries);
+        
+    };
+    
+    
+    //
+    // file system functions 
+    //
+        
 
 });

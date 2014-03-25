@@ -14,43 +14,19 @@
 
 <body>
 
-    <div id="test">this is the <button class="tester">test</button> div</div>
-    
-    <button class="edit">Edit Mode</button>
-    <button class="reverse">Reverse</button>
-
     <div class="wrapper ui-helper-clearfix">
 
         <div class="column controls">
-            
-            <span class="spritewrapper">
-                <img src="images/sprites.png" class="add sprite sprite-add" title="add new" />
-            </span>
-
-            <span class="spritewrapper">
-                <img src="images/sprites.png" class="editanimate sprite sprite-edit" title="edit mode" />
-            </span>
-
-            <span class="spritewrapper">
-                <img src="images/sprites.png" class="reverseanimate sprite sprite-reverse" title="reverse" />
-            </span>
-            <span class="spritewrapper">
-                <img src="images/sprites.png" class="delete sprite sprite-delete" title="delete all" />
-            </span>
-
-            <span class="spritewrapper">
-                <img src="images/sprites.png" class="save sprite sprite-save" title="save" />
-            </span>
-            <span class="spritewrapper">
-                <img src="images/sprites.png" class="load sprite sprite-load" title="load"/>
-            </span>
+            <img src="images/add.png" class="add iwpbutton" title="add new" />
+            <img src="images/edit.png" class="editanimate iwpbutton" title="edit mode" />
+            <img src="images/reverse.png" class="reverseanimate iwpbutton" title="reverse" />
+            <img src="images/delete.png" class="delete iwpbutton" title="delete all" />
+            <img src="images/save.png" class="save iwpbutton" title="save" />
+            <img src="images/load.png" class="load iwpbutton" title="load" />
         </div>
 
-        <div class="column trashcan holder">drag here to remove
-            <br/>
-            <span class="spritewrapper">
-                <img id="remove" src="images/sprites.png" class="remove sprite sprite-trash" title="empty trash" />
-            </span>
+        <div class="column trashcan holder">
+            <img src="images/trash.png" class="remove iwpbutton" title="empty trash" />
         </div>
 
         <div class="column portlets holder">
@@ -108,14 +84,19 @@
         </div>
 
         <div class="column controls">
-            <span class="spritewrapper">
-                <img src="images/sprites.png" class="add sprite sprite-add" title="add new" />
-            </span>
-            
+            <img src="images/add.png" class="add iwpbutton" title="add new" />
+            <img src="images/subtract.png" class="subtract iwpbutton" title="remove last" />
         </div>
 
     </div>
 
+    <div id="test">this is the
+        <button class="tester">test</button>div
+        <br />
+        <button class="edit">Edit Mode</button>
+        <button class="reverse">Reverse</button>
+    </div>
+    <div id="test2"></div>
 </body>
 
 </html>

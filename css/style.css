@@ -22,17 +22,20 @@ body {
 }
 .wrapper {
     width: 70%;
-    /**/
     margin: auto;
+    /*
     border: 1px solid red;
     /**/
 }
 .column {
     width: 40rem;
-    /*float: left; /**/
-    border: 1px dashed black;
+    /*border: 1px dashed black;/**/
     /**/
     margin: auto;
+    margin-top: 1rem;
+} 
+.column:last-of-type {
+    margin-bottom: 1rem;
 }
 .portlet {
     margin: 1rem 1rem;
@@ -101,8 +104,8 @@ button {
     color: #50375c;
 }
 .controls {
-    margin: auto;
-    min-height: 25px;
+    height: 50px;
+    text-align: center;
 }
 .hidden {
     display: none;
@@ -111,43 +114,19 @@ button {
     background: yellow;
 }
 .trashcan {
-    min-height: 3rem;
+    padding: 1rem;
+    min-height: 50px;
     background: #b93f3f;
 }
-.spritewrapper {
-    position: relative;
-    height: 25px;   
-    width: 25px;
+.iwpbutton {
+    cursor: pointer;
 }
-.sprite {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.sprite-delete {
-    clip: rect(0 25px 25px 0);
-}
-.sprite-add {
-    clip: rect(0 50px 25px 25px);
-}
-.sprite-reverse {
-    clip: rect(0 75px 25px 50px);
-}
-.sprite-edit {
-    clip: rect(0 100px 25px 75px);
-}
-.sprite-save {
-    clip: rect(0 125px 25px 100px);
-}
-.sprite-load {
-    clip: rect(0 150px 25px 125px);
-}
-.sprite-trash {
-    clip: rect(0 175px 25px 150px);
-}
+
 #test {
     width: 200px;
     height: 40px;
     margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     border: 1px dotted black;
 }
