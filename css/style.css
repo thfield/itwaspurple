@@ -1,70 +1,107 @@
-/* jquery-ui style.css start */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+ 
+.clearfix:after {
+  clear: both;
+}
 
-.ui-helper-clearfix:before,
-.ui-helper-clearfix:after {
-    content: "";
-    display: table;
-    border-collapse: collapse;
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
-.ui-helper-clearfix:after {
-    clear: both;
-}
-.ui-helper-clearfix {
-    min-height: 0;
-    /* support: IE7 */
-}
-/* jquery-ui style.css end */
 
 body {
-    background: #777;
+    background: #b3b3b3;
     font-family: serif;
     font-size: 16px;
 }
-.wrapper {
-    width: 70%;
-    margin: auto;
-    /*
-    border: 1px solid red;
-    /**/
+header {
+    background-color:#808080;
+    height: 3em;
+    width: 75%;
+    margin: 1rem auto ;
+    
 }
-.column {
-    width: 40rem;
-    /*border: 1px dashed black;/**/
-    /**/
-    margin: auto;
+header span {
+    font-size: 2rem;
+    margin-top: 0.4rem;
+    margin-left: 0.5rem;
+}
+header a {
+    float: right;
+    text-decoration: none;
+    margin-right: 1rem;
     margin-top: 1rem;
-} 
-.column:last-of-type {
-    margin-bottom: 1rem;
 }
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 48rem;
+   /* border: 1px dashed red;/**/
+}
+
+/* media column definitions */
+/* Small screens (default) */
+html { font-size: 100%; }
+
+/* Medium screens (640px) */
+@media (min-width: 40rem) {
+    html { font-size: 112%; }
+    .column {
+        float: left;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        /*border: 1px dashed black;/**/
+  }
+  .column.full { width: 100%; }
+  .column.two-thirds { width: 66.7%; }
+  .column.half { width: 50%; }
+  .column.third { width: 33.3%; }
+  .column.quarter { width: 24.95%; }
+  .column.eighth { width: 12.5%; }
+  .column.flow-opposite { float: right; }  
+}
+
+/* Large screens (1024px) */
+@media (min-width: 64rem) {
+  html { font-size: 120%; }
+}
+
 .portlet {
-    margin: 1rem 1rem;
-    padding: 0.3rem;
-    background: #ccc;
+    margin: 0.5rem 0.5rem;/**/
+    padding: 0.3rem; /**/
+    background: #808080;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    height: 130px;
+    /*height: 10rem;/**/
 }
 .portlet-header {
     padding: 0.3rem;
-    /**/
-    margin-bottom: 0.5rem;
-    position: relative;
+    margin-bottom: 0.3rem;
+    /*position: relative;/**/
+    border-radius: 0.2rem;
     background: #8f5fa5;
     height: 1.5rem;
 }
-.portlet-toggle {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    margin-top: -8px;
+.portlet-remove {
+    height: 1rem;
+    width: 1rem;
+    /*border: 1px solid black;/**/
+    background-color: #ccc;
+    /*padding: 0.2rem;/**/
+    float: right;
+    font-family: sans-serif;
+    text-align: center;
+    border-radius: 0.2rem;
+    cursor: pointer;
 }
 .portlet-content {
     padding: 0.5rem;
-    border-radius: 5px;
     background: #eee;
-    margin: 0.5rem;
-    height: 4rem;
-    width: 35rem;
+    width: 100%;
     margin: auto;
     display: table;
 }
@@ -76,9 +113,9 @@ body {
     font-family: monospace;
 }
 textarea {
-    width: 35rem;
     min-height: 50px;
-    font-size: 1em;
+    /*font-size: 1em;/**/
+    width:100%;
 }
 .portlet-placeholder {
     /*border: 1px dotted black; /**/
@@ -88,24 +125,16 @@ textarea {
     /*background: #919191;*/
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
-.portlet-remove {
-    height: 1rem;
-    width: 1rem;
-    /*border: 1px solid black;/**/
-    background-color: #ccc;
-    padding: 0.2rem;
-    float: right;
-    font-family: sans-serif;
-    text-align: center;
-    border-radius: 0.2rem;
-    cursor: pointer;
-}
 button {
     color: #50375c;
 }
 .controls {
-    height: 50px;
-    text-align: center;
+    /*height: 50px; /**/
+    text-align: center;/**/
+}
+.controls img {
+    margin: auto;
+   /* display: block;/**/
 }
 .hidden {
     display: none;
@@ -114,14 +143,24 @@ button {
     background: yellow;
 }
 .trashcan {
+    float: right;
     padding: 1rem;
-    min-height: 50px;
-    background: #b93f3f;
+    min-height: 20rem;
+    background: #ccc;
+    border-radius: 0.5rem;
+    font-size: 75%;
+}
+.trashcan .portlet-header {
+    height: 0.5rem;
+}
+.trashcan .portlet-remove {
+    display: none;
 }
 .iwpbutton {
     cursor: pointer;
+    /*display: block;/**/
 }
-
+.delete {float:right;}
 #test {
     width: 200px;
     height: 40px;
