@@ -2,14 +2,10 @@ $(document).ready(function () {
     function test() {
         $("#test").toggleClass("tested");
         // test function goes here, activated by "test" button
-         $('#test2').empty();
+        $('#test2').empty();
     };
 
-    /*    function testanimate() {
-        animateSwap();
-    };
-*/
-    
+
     //
     // HTML snippits
     //
@@ -67,11 +63,13 @@ $(document).ready(function () {
     $(document).on('click', '.save', function () {
         collect();
     });
+    $(document).on('click', '.load', function () {
+        populate();
+    });
 
     //
     // control functions      
     //
-
     var activeEdit = false;
 
     function reverseList() {
@@ -92,22 +90,21 @@ $(document).ready(function () {
     function deleteall() {
         $(".portlets").empty();
     };
-    
+
     function deleteLast() {
-        $('.portlet:last-of-type').fadeOut(400,function() {
-            $(this).remove();
+        $('.portlets>.portlet:last-of-type').fadeOut(400, function () {
+            $(this).appendTo('.trashcan');
+            $(this).fadeIn(400);
         });
     };
 
-    // portlet-remove button binding is added to .portlets div so newly created portlets still have function
-    $(".portlets").on("click", ".portlet-remove", function (event) {
-        // deleteportlet();
-        //$(this).toggleClass('tested');
-        //$(this).parents('.portlet').remove();
+    // deleteThis
+    $(".portlets").on("click", ".portlet-remove", function (event) { // .portlet-remove button binding is added to .portlets div so newly created portlets still have function
         $(this).parents('.portlet').fadeOut(400, function () {
-            $(this).remove();
+            $(this).appendTo('.trashcan');
+            $(this).fadeIn(400);
             //$(this).toggleClass('trashcan');
-            // use instead of .remove() to keep portlet in DOM, so 'undelete' can happen
+            //TODO change to use trashcan instead of $(this).remove() to keep portlet in DOM, so 'undelete' can happen
         });
     });
 
@@ -144,21 +141,33 @@ $(document).ready(function () {
         $('.portlet-remove').toggleClass('hidden');
     };
 
-    function collect() {
-        $('#test2').empty();
-        var entries = $(".displayContent").clone();
-        $.each(entries, function (i) {
-            $("#test2").append(entries[i]);
-        }); 
-        entries.length=0;/**/
-        //$('#test2').text(entries);
-        
-    };
-    
-    
     //
     // file system functions 
     //
+    function collect() {
+        $('#test2').empty();
+        var entries = $(".portlet").clone();
+        $.each(entries, function (i) {
+            $("#test2").append(entries[i]);
+        });
+        entries.length = 0;
         
+        $('#test2 .portlet-content').each(function () {
+            $foo = $(this).children('.displayContent').text();
+            $(this).children('.editContent').val($foo);
+        });
+    };
+
+
+
+    function populate() {
+        var entries = $('#test2>.portlet').get();
+        $(".portlets").empty();
+        $.each(entries, function (i) {
+            $(".portlets").append(entries[i]);
+        });
+    }
+
+
 
 });

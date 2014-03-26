@@ -14,25 +14,26 @@ improve ui
     see http://tympanus.net/Development/SimpleDropDownEffects/index6.html
   "edit" could flip the cards
 switch to border box sizing
+lock down sizes to rems
 make entry card uniform size
   edit mode and enter mode same size
   drag placeholder same size
 controls
-  add new entry button at bottom of card stack
+//  add new entry button at bottom of card stack
 add counter to 140 characters
-change sprite sheet to individual images, use compass sheets
+//change sprite sheet to individual images, use compass sheets
   http://webdesign.tutsplus.com/articles/css-sprite-sheets-best-practices-tools-and-helpful-applications--webdesign-8340
   http://webdesign.tutsplus.com/tutorials/sass-and-compass-for-web-designers-grids-and-sprites--webdesign-6376
-lock down sizes to rems
+
 
 ### issues 
 //animation breaks functionality 
-  dragging to trash breaks reverse animation but not edit
-  adding entry breaks animation
-  probable culprit:
-    jquery callback after ajax request/dom update
-    http://stackoverflow.com/questions/16062899/jquery-doesnt-work-after-ajax-loads
-    *** http://stackoverflow.com/questions/16512016/event-listener-in-elements-appended-after-dom-content-loaded
-    ** http://davidwalsh.name/event-delegate
+//  dragging to trash breaks reverse animation but not edit
+//  adding entry breaks animation
+//  probable culprit:
+//    jquery callback after ajax request/dom update
+//    http://stackoverflow.com/questions/16062899/jquery-doesnt-work-after-ajax-loads
+//    *** http://stackoverflow.com/questions/16512016/event-listener-in-elements-appended-after-dom-content-loaded
+//    ** http://davidwalsh.name/event-delegate
 edit with animation only works with addition of even number of new portlets
 edit with animation doesn't work when last portlet is removed
