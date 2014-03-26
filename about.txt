@@ -1,3 +1,7 @@
+http://www.theguardian.com/books/booksblog/2014/jan/10/twitter-birth-new-literary-genre
+
+http://6thfloor.blogs.nytimes.com/2014/01/09/teju-cole-puts-story-telling-to-the-twitter-test/?_php=true&_type=blogs&_r=2
+
 Wayside School is Falling Down
 Chapter 17, What?
 
@@ -8,3 +12,7 @@ http://en.wikipedia.org/wiki/Reverse_chronology
 
 Seinfeld, The Betrayal http://en.wikipedia.org/wiki/The_Betrayal
 Family Guy, Yug Yilmaf http://en.wikipedia.org/wiki/Yug_Ylimaf
+
+On Twitter, (at least the official web version) your tweets show up in reverse chronology on your timeline.  That is, your newest tweets are always on the top as if you were stacking physical cards in a pile.  This leads to a confusing experience reading a timeline from the past: scroll down to find the beginning, read each tweet top to bottom, then move your eyes up to the next tweet.  The tweet that comes next in the story was posted later in time, which means it comes before the last tweet in timeline flow, but after in story flow.
+
+This doesn't usually matter at all, as people have adopted a usage pattern for twitter that fits these quirks and limitations.  But people are using twitter to attempt storytelling in new ways.  The way that caught my eye was collaboratively, through re-tweets over the course of a day, designed to be stumbled upon, discovered almost by accident through curiosity and under your own initiative.  It made me excited for the possibilities of a twitter storytelling genre.  Multiple viewpoints, out of order storylines, reverse order storylines.

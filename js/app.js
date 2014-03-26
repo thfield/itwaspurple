@@ -9,8 +9,8 @@ $(document).ready(function () {
     //
     // HTML snippits
     //
-    var itemHTML = '<div class="portlet"><div class="portlet-header"><div class="portlet-remove hidden">X</div></div><div class="portlet-content"><div class="displayContent"></div><textarea class="editContent hidden"></textarea></div></div>'
-    var itemHTMLedit = '<div class="portlet"><div class="portlet-header"><div class="portlet-remove">X</div></div><div class="portlet-content"><div class="displayContent hidden"></div><textarea class="editContent"></textarea></div></div>'
+    var itemHTML = '<div class="card"><div class="card-header"><div class="card-remove hidden">X</div></div><div class="card-content"><div class="displayContent"></div><textarea class="editContent hidden"></textarea></div></div>'
+    var itemHTMLedit = '<div class="card"><div class="card-header"><div class="card-remove">X</div></div><div class="card-content"><div class="displayContent hidden"></div><textarea class="editContent"></textarea></div></div>'
 
 
     //
@@ -18,14 +18,14 @@ $(document).ready(function () {
     //
     $(".holder").sortable({
         connectWith: ".holder",
-        handle: ".portlet-header",
-        placeholder: "portlet-placeholder"
+        handle: ".card-header",
+        placeholder: "card-placeholder"
     });
 
     //
     // called on pageload to copy values from .edit to .display
     //
-    $('.portlet-content').each(function () {
+    $('.card-content').each(function () {
         $foo = $(this).children('.displayContent').text();
         $(this).children('.editContent').val($foo);
     });
@@ -73,64 +73,65 @@ $(document).ready(function () {
     var activeEdit = false;
 
     function reverseList() {
-        var list = $(".portlets>.portlet").get().reverse();
-        $(".portlets").empty();
+        var list = $(".cards>.card").get().reverse();
+        $(".cards").empty();
         $.each(list, function (i) {
-            $(".portlets").append(list[i]);
+            $(".cards").append(list[i]);
         });
     };
 
     function reverseListAnimate() {
-        $('.portlets').fadeOut(400, function () {
+        $('.cards').fadeOut(400, function () {
             reverseList();
-            $('.portlets').fadeIn(400);
+            $('.cards').fadeIn(400);
         });
     };
 
     function deleteall() {
-        $(".portlets").empty();
+        $(".cards").empty();
+        $('.trashcan>.card').remove();
     };
 
     function deleteLast() {
-        $('.portlets>.portlet:last-of-type').fadeOut(400, function () {
+        $('.cards>.card:last-of-type').fadeOut(400, function () {
             $(this).appendTo('.trashcan');
             $(this).fadeIn(400);
         });
     };
 
     // deleteThis
-    $(".portlets").on("click", ".portlet-remove", function (event) { // .portlet-remove button binding is added to .portlets div so newly created portlets still have function
-        $(this).parents('.portlet').fadeOut(400, function () {
+    $(".cards").on("click", ".card-remove", function (event) { // .card-remove button binding is added to .cards div so newly created cards still have function
+        $(this).parents('.card').fadeOut(400, function () {
             $(this).appendTo('.trashcan');
             $(this).fadeIn(400);
             //$(this).toggleClass('trashcan');
-            //TODO change to use trashcan instead of $(this).remove() to keep portlet in DOM, so 'undelete' can happen
+            //TODO change to use trashcan instead of $(this).remove() to keep card in DOM, so 'undelete' can happen
         });
     });
 
     function newentry() {
         if (activeEdit == true) {
-            $(".portlets").append(itemHTMLedit);
+            $(".cards").append(itemHTMLedit);
         } else {
-            $(".portlets").append(itemHTML);
+            $(".cards").append(itemHTML);
         }
         console.log(activeEdit);
     };
 
     function emptytrash() {
-        $(".trashcan").children('.portlet').remove();
+        $('.trashcan').children('.card').remove();
     };
 
     function editModeAnimate() {
-        $('.portlet-content').fadeOut(400, function () {
+        $('.card-content').fadeOut(400, function () {
             editMode();
-            $('.portlet-content').fadeIn(400);
+            $('.card-content').fadeIn(400);
         });
     };
 
     function editMode() {
         activeEdit = !activeEdit;
-        var $bar = $('.portlet-content');
+        var $bar = $('.card-content');
         $bar.each(function () {
             $foo = $(this).children('.editContent').val();
             $(this).children('.displayContent').text($foo);
@@ -138,7 +139,7 @@ $(document).ready(function () {
 
         $bar.children('.editContent').toggleClass('hidden');
         $bar.children('.displayContent').toggleClass('hidden');
-        $('.portlet-remove').toggleClass('hidden');
+        $('.card-remove').toggleClass('hidden');
     };
 
     //
@@ -146,13 +147,13 @@ $(document).ready(function () {
     //
     function collect() {
         $('#test2').empty();
-        var entries = $(".portlet").clone();
+        var entries = $(".cards>.card").clone();
         $.each(entries, function (i) {
             $("#test2").append(entries[i]);
         });
         entries.length = 0;
         
-        $('#test2 .portlet-content').each(function () {
+        $('#test2 .card-content').each(function () {
             $foo = $(this).children('.displayContent').text();
             $(this).children('.editContent').val($foo);
         });
@@ -161,10 +162,10 @@ $(document).ready(function () {
 
 
     function populate() {
-        var entries = $('#test2>.portlet').get();
-        $(".portlets").empty();
+        var entries = $('#test2>.card').get();
+        $(".cards").empty();
         $.each(entries, function (i) {
-            $(".portlets").append(entries[i]);
+            $(".cards").append(entries[i]);
         });
     }
 
