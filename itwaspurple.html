@@ -9,7 +9,7 @@
     <script src="js/jquery-ui-1.10.4.custom.js"></script>
 
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/fs-app.js"></script>
+    <script src="js/app.js"></script>
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,8 +21,10 @@
         <span>itwaspurple</span>
         <a href="https://github.com/thfield/itwaspurple/tree/gh-pages">view on Github</a>
         <a href="http://thfield.github.io/">me</a>
-        <a href="examp.html">examples</a>
+        <a href="bugs.html">issues</a>
+        <a href="examples.html">examples</a>
         <a href="about.html">about</a>
+        <a href="itwaspurple.html">app</a>
     </header>
 
     <div class="wrapper clearfix">
@@ -33,7 +35,7 @@
                 <img src="images/edit.png" class="editanimate iwpbutton" title="edit mode" />
                 <img src="images/reverse.png" class="reverseanimate iwpbutton" title="reverse" />
             </div>
-            <div class="">
+            <div class="plusminus">
                 <img src="images/add.png" class="add iwpbutton" title="add new" />
                 <img src="images/subtract.png" class="subtract iwpbutton" title="remove last" />
             </div>
@@ -57,7 +59,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <div class="card-remove hidden">X</div>
+                    <img src="images/delete-small.png" class="card-remove hidden" />
                 </div>
                 <div class="card-content">
                     <div class="displayContent">123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789</div>
@@ -67,7 +69,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <div class="card-remove hidden">X</div>
+                    <img src="images/delete-small.png" class="card-remove hidden" />
                 </div>
                 <div class="card-content">
                     <div class="displayContent">Tune in at 12:40pm ET to watch live as the astronauts on the #ISS talk with attendees at #SXSW on NASA TV: http://www.nasa.gov/nasatv #NASASXSW</div>
@@ -77,7 +79,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <div class="card-remove hidden">X</div>
+                    <img src="images/delete-small.png" class="card-remove hidden" />
                 </div>
                 <div class="card-content">
                     <div class="displayContent">The crew says congrats to #Gravity, info on Mondays' landing, and bugs on our bodies? #spacetoground http://go.nasa.gov/MTZ517</div>
@@ -87,7 +89,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <div class="card-remove hidden">X</div>
+                    <img src="images/delete-small.png" class="card-remove hidden" />
                 </div>
                 <div class="card-content">
                     <div class="displayContent">Join us Sunday night as #Cosmos premieres. We'll be sharing more about our images & missions that appear on the show. Follow @NASA. #FF</div>
@@ -97,14 +99,17 @@
 
             <div class="card">
                 <div class="card-header">
-                    <div class="card-remove hidden">X</div>
+                    <img src="images/delete-small.png" class="card-remove hidden" />
                 </div>
                 <div class="card-content">
                     <div class="displayContent">We're celebrating five years of science findings since @NASAKepler's launch with a slide show! Have any favorites? http://go.nasa.gov/1lFNMsI</div>
                     <textarea class="editContent hidden"></textarea>
                 </div>
             </div>
-
+            <div id="cardsEnd" class="plusminus">
+                <img src="images/add.png" class="add iwpbutton" title="add new" />
+                <img src="images/subtract.png" class="subtract iwpbutton" title="remove last" />
+            </div>
         </div>
         <div class="column quarter trashcan holder">
             <img src="images/trash.png" class="remove iwpbutton" title="empty trash" />
@@ -115,7 +120,7 @@
 
     </div>
 
-    <div id="test">this is the
+    <div id="test" class="hidden">this is the
         <button class="tester">test</button>div
         <br />
         <button class="edit">Edit Mode</button>
