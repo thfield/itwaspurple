@@ -2,7 +2,7 @@ $(document).ready(function () {
     function test() {
         $("#test").toggleClass("tested");
         // test function goes here, activated by "test" button
-        $('#test2').empty();
+        $('#staging').empty();
     };
 
 
@@ -146,14 +146,14 @@ $(document).ready(function () {
     // file system functions 
     //
     function collect() {
-        $('#test2').empty();
+        $('#staging').empty();
         var entries = $(".cards>.card").clone();
         $.each(entries, function (i) {
-            $("#test2").append(entries[i]);
+            $("#staging").append(entries[i]);
         });
         entries.length = 0;
         
-        $('#test2 .card-content').each(function () {
+        $('#staging .card-content').each(function () {
             $foo = $(this).children('.displayContent').text();
             $(this).children('.editContent').val($foo);
         });
@@ -162,7 +162,7 @@ $(document).ready(function () {
 
 
     function populate() {
-        var entries = $('#test2>.card').get();
+        var entries = $('#staging>.card').get();
         $(".cards").empty();
         $.each(entries, function (i) {
             $(".cards").append(entries[i]);

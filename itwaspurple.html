@@ -9,8 +9,9 @@
     <script src="js/jquery-ui-1.10.4.custom.js"></script>
 
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/app.js"></script>
-    
+    <script src="js/fs-app.js"></script>
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=PT+Mono|Libre+Baskerville|Open+Sans' rel='stylesheet' type='text/css'>
 </head>
@@ -18,7 +19,7 @@
 <body>
     <header>
         <span>itwaspurple</span>
-        <a href="index.html">view on Github</a>
+        <a href="https://github.com/thfield/itwaspurple/tree/gh-pages">view on Github</a>
         <a href="http://thfield.github.io/">me</a>
         <a href="examp.html">examples</a>
         <a href="about.html">about</a>
@@ -26,79 +27,90 @@
 
     <div class="wrapper clearfix">
 
-        
-            <div class="column quarter controls">
-                <div class="">
-                    <img src="images/edit.png" class="editanimate iwpbutton" title="edit mode" />
-                    <img src="images/reverse.png" class="reverseanimate iwpbutton" title="reverse" />
-                </div>
-                <div class="">
-                    <img src="images/save.png" class="save iwpbutton" title="save" />
+
+        <div class="column quarter controls">
+            <div class="">
+                <img src="images/edit.png" class="editanimate iwpbutton" title="edit mode" />
+                <img src="images/reverse.png" class="reverseanimate iwpbutton" title="reverse" />
+            </div>
+            <div class="">
+                <img src="images/add.png" class="add iwpbutton" title="add new" />
+                <img src="images/subtract.png" class="subtract iwpbutton" title="remove last" />
+            </div>
+            <div class="filebrowser" id="filebrowser">
+                <form action="#" method="POST" id="file-form">
+                    <input type="image" src="images/save.png" class="save iwpbutton" title="save"></input>
+                    <!--<img src="images/save.png" class="save iwpbutton" title="save" /> -->
                     <img src="images/load.png" class="load iwpbutton" title="load" />
+                    <input type="text" name="filename" id="filename" placeholder="Filename" />
+                    <div class="files">
+                        <ul id="file-list"></ul>
+                        <div id="messages"></div>
+                    </div>
+                    <div id="staging" class="hidden"></div>
+                </form>
+            </div>
+
+
+        </div>
+        <div class="column half cards holder">
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-remove hidden">X</div>
                 </div>
-                <div class="">
-                    <img src="images/add.png" class="add iwpbutton" title="add new" />
-                    <img src="images/subtract.png" class="subtract iwpbutton" title="remove last" />
+                <div class="card-content">
+                    <div class="displayContent">123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789</div>
+                    <textarea class="editContent hidden"></textarea>
                 </div>
             </div>
-            <div class="column half cards holder">
 
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-remove hidden">X</div>
-                    </div>
-                    <div class="card-content">
-                        <div class="displayContent">123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789</div>
-                        <textarea class="editContent hidden"></textarea>
-                    </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-remove hidden">X</div>
                 </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-remove hidden">X</div>
-                    </div>
-                    <div class="card-content">
-                        <div class="displayContent">Tune in at 12:40pm ET to watch live as the astronauts on the #ISS talk with attendees at #SXSW on NASA TV: http://www.nasa.gov/nasatv #NASASXSW</div>
-                        <textarea class="editContent hidden"></textarea>
-                    </div>
+                <div class="card-content">
+                    <div class="displayContent">Tune in at 12:40pm ET to watch live as the astronauts on the #ISS talk with attendees at #SXSW on NASA TV: http://www.nasa.gov/nasatv #NASASXSW</div>
+                    <textarea class="editContent hidden"></textarea>
                 </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-remove hidden">X</div>
-                    </div>
-                    <div class="card-content">
-                        <div class="displayContent">The crew says congrats to #Gravity, info on Mondays' landing, and bugs on our bodies? #spacetoground http://go.nasa.gov/MTZ517</div>
-                        <textarea class="editContent hidden"></textarea>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-remove hidden">X</div>
-                    </div>
-                    <div class="card-content">
-                        <div class="displayContent">Join us Sunday night as #Cosmos premieres. We'll be sharing more about our images & missions that appear on the show. Follow @NASA. #FF</div>
-                        <textarea class="editContent hidden"></textarea>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <div class="card-remove hidden">X</div>
-                    </div>
-                    <div class="card-content">
-                        <div class="displayContent">We're celebrating five years of science findings since @NASAKepler's launch with a slide show! Have any favorites? http://go.nasa.gov/1lFNMsI</div>
-                        <textarea class="editContent hidden"></textarea>
-                    </div>
-                </div>
-
             </div>
-            <div class="column quarter trashcan holder">
-                <img src="images/trash.png" class="remove iwpbutton" title="empty trash" />
-                <img src="images/delete.png" class="delete iwpbutton" title="delete all" />
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-remove hidden">X</div>
+                </div>
+                <div class="card-content">
+                    <div class="displayContent">The crew says congrats to #Gravity, info on Mondays' landing, and bugs on our bodies? #spacetoground http://go.nasa.gov/MTZ517</div>
+                    <textarea class="editContent hidden"></textarea>
+                </div>
             </div>
-        
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-remove hidden">X</div>
+                </div>
+                <div class="card-content">
+                    <div class="displayContent">Join us Sunday night as #Cosmos premieres. We'll be sharing more about our images & missions that appear on the show. Follow @NASA. #FF</div>
+                    <textarea class="editContent hidden"></textarea>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-remove hidden">X</div>
+                </div>
+                <div class="card-content">
+                    <div class="displayContent">We're celebrating five years of science findings since @NASAKepler's launch with a slide show! Have any favorites? http://go.nasa.gov/1lFNMsI</div>
+                    <textarea class="editContent hidden"></textarea>
+                </div>
+            </div>
+
+        </div>
+        <div class="column quarter trashcan holder">
+            <img src="images/trash.png" class="remove iwpbutton" title="empty trash" />
+            <img src="images/delete.png" class="delete iwpbutton" title="delete all" />
+        </div>
+
 
 
     </div>
@@ -109,7 +121,7 @@
         <button class="edit">Edit Mode</button>
         <button class="reverse">Reverse</button>
     </div>
-    <div id="test2"></div>
+
 </body>
 
 </html>

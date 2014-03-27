@@ -24,6 +24,7 @@ tie scrolling to cards, fix controls and trashcan to page
 edit with animation only works with addition of even number of new cards
 edit with animation doesn't work when last card is removed
 
+radio buttons don't animate correctly
 
 
 ### done
