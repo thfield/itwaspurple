@@ -42,7 +42,6 @@
             <div class="filebrowser" id="filebrowser">
                 <form action="#" method="POST" id="file-form">
                     <input type="image" src="images/save.png" class="save iwpbutton" title="save"></input>
-                    <!--<img src="images/save.png" class="save iwpbutton" title="save" /> -->
                     <img src="images/load.png" class="load iwpbutton" title="load" />
                     <input type="text" name="filename" id="filename" placeholder="Filename" />
                     <div class="files">
@@ -62,7 +61,7 @@
                     <img src="images/delete-small.png" class="card-remove hidden" />
                 </div>
                 <div class="card-content">
-                    <div class="displayContent">123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789</div>
+                    <div class="displayContent">Toggle display/edit mode by clicking on the pencil</div>
                     <textarea class="editContent hidden"></textarea>
                 </div>
             </div>
@@ -72,7 +71,27 @@
                     <img src="images/delete-small.png" class="card-remove hidden" />
                 </div>
                 <div class="card-content">
-                    <div class="displayContent">Tune in at 12:40pm ET to watch live as the astronauts on the #ISS talk with attendees at #SXSW on NASA TV: http://www.nasa.gov/nasatv #NASASXSW</div>
+                    <div class="displayContent">Reverse the stack of cards by clicking on the cycle arrows</div>
+                    <textarea class="editContent hidden"></textarea>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <img src="images/delete-small.png" class="card-remove hidden" />
+                </div>
+                <div class="card-content">
+                    <div class="displayContent">Rearrange cards by dragging the header bar</div>
+                    <textarea class="editContent hidden"></textarea>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <img src="images/delete-small.png" class="card-remove hidden" />
+                </div>
+                <div class="card-content">
+                    <div class="displayContent">Add a card to the bottom/delete the bottom card by clicking on the plus/minus</div>
                     <textarea class="editContent hidden"></textarea>
                 </div>
             </div>
@@ -82,7 +101,7 @@
                     <img src="images/delete-small.png" class="card-remove hidden" />
                 </div>
                 <div class="card-content">
-                    <div class="displayContent">The crew says congrats to #Gravity, info on Mondays' landing, and bugs on our bodies? #spacetoground http://go.nasa.gov/MTZ517</div>
+                    <div class="displayContent">Save the stack of cards by entering a filename and clicking the "down" arrow</div>
                     <textarea class="editContent hidden"></textarea>
                 </div>
             </div>
@@ -92,25 +111,50 @@
                     <img src="images/delete-small.png" class="card-remove hidden" />
                 </div>
                 <div class="card-content">
-                    <div class="displayContent">Join us Sunday night as #Cosmos premieres. We'll be sharing more about our images & missions that appear on the show. Follow @NASA. #FF</div>
+                    <div class="displayContent">Open a saved file by choosing the radio button and clicking the "up" arrow</div>
                     <textarea class="editContent hidden"></textarea>
                 </div>
             </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <img src="images/delete-small.png" class="card-remove hidden" />
+                </div>
+                <div class="card-content">
+                    <div class="displayContent">Move a card to the trash by entering edit mode and clicking the X in the upper right or by dragging it to the trash</div>
+                    <textarea class="editContent hidden"></textarea>
+                </div>
+            </div>
+            
 
             <div class="card">
                 <div class="card-header">
                     <img src="images/delete-small.png" class="card-remove hidden" />
                 </div>
                 <div class="card-content">
-                    <div class="displayContent">We're celebrating five years of science findings since @NASAKepler's launch with a slide show! Have any favorites? http://go.nasa.gov/1lFNMsI</div>
+                    <div class="displayContent">Empty the trash by clicking the "Trash" button</div>
                     <textarea class="editContent hidden"></textarea>
                 </div>
             </div>
+                
+            <div class="card">
+                <div class="card-header">
+                    <img src="images/delete-small.png" class="card-remove hidden" />
+                </div>
+                <div class="card-content">
+                    <div class="displayContent">Delete all cards by clicking the X inside the trashcan</div>
+                    <textarea class="editContent hidden"></textarea>
+                </div>
+            </div>
+            
+            
             <div id="cardsEnd" class="plusminus">
                 <img src="images/add.png" class="add iwpbutton" title="add new" />
                 <img src="images/subtract.png" class="subtract iwpbutton" title="remove last" />
             </div>
+            
         </div>
+    
         <div class="column quarter trashcan holder">
             <img src="images/trash.png" class="remove iwpbutton" title="empty trash" />
             <img src="images/delete.png" class="delete iwpbutton" title="delete all" />

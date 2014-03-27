@@ -88,8 +88,9 @@ $(document).ready(function () {
     };
 
     function deleteall() {
-        $(".cards").empty();
-        $('.trashcan>.card').remove();
+        /*$(".cards>.card").remove();
+        $('.trashcan>.card').remove();*/
+        $('.card').remove();
         filenameInput.value = '';
     };
 
@@ -112,11 +113,11 @@ $(document).ready(function () {
 
     function newentry() {
         if (activeEdit == true) {
-            $("#cardsEnd").prepend(itemHTMLedit);
+            $("#cardsEnd").before(itemHTMLedit);
         } else {
-            $("#cardsEnd").prepend(itemHTML);
-        }
-        console.log(activeEdit);
+            $("#cardsEnd").before(itemHTML);
+        };
+        
     };
 
     function emptytrash() {
@@ -166,18 +167,14 @@ $(document).ready(function () {
         $.each(entries, function (i) {
             $(".cards").append(entries[i]);
         });
+        filenameInput.value = '';
     }
 
-
-
-
-    // begin fs functions
     // ADAPTED FROM http://blog.teamtreehouse.com/building-an-html5-text-editor-with-the-filesystem-apis
 
     // Allow for vendor prefixes.
     window.requestFileSystem = window.requestFileSystem ||
         window.webkitRequestFileSystem;
-
 
     // Create a variable that will store a reference to the FileSystem.
     var filesystem = null;
@@ -188,7 +185,6 @@ $(document).ready(function () {
     var contentText = document.getElementById('staging');
     var fileList = document.getElementById('file-list');
     var messageBox = document.getElementById('messages');
-
 
     // A simple error handler to be used throughout this demo.
     function errorHandler(error) {
@@ -214,58 +210,43 @@ $(document).ready(function () {
             message = 'Unknown Error';
             break;
         }
-
         console.log(message);
     }
-
 
     // Request a FileSystem and set the filesystem variable.
     function initFileSystem() {
         navigator.webkitPersistentStorage.requestQuota(1024 * 1024 * 5,
             function (grantedSize) {
-
                 // Request a file system with the new size.
                 window.requestFileSystem(window.PERSISTENT, grantedSize, function (fs) {
-
                     // Set the filesystem variable.
                     filesystem = fs;
-
                     // Setup event listeners on the form.
                     setupFormEventListener();
-
                     // Update the file browser.
                     listFiles();
-
                 }, errorHandler);
-
             }, errorHandler);
     }
 
-
     function loadFile(filename) {
         filesystem.root.getFile(filename, {}, function (fileEntry) {
-
             fileEntry.file(function (file) {
                 var reader = new FileReader();
-
                 reader.onload = function (e) {
                     // Update the form fields.
                     filenameInput.value = filename;
                     //contentText.value = this.result;
                     contentText.innerHTML = this.result;
                 };
-
                 reader.readAsText(file);
             }, errorHandler);
-
         }, errorHandler);
     }
-
 
     function displayEntries(entries) {
         // Clear out the current file browser entries.
         fileList.innerHTML = '';
-
         entries.forEach(function (entry, i) {
             var li = document.createElement('li');
 
@@ -322,6 +303,7 @@ $(document).ready(function () {
         fetchEntries();
     }
 
+ 
 
     // Save a file in the FileSystem.
     function saveFile(filename, content) {
@@ -377,7 +359,6 @@ $(document).ready(function () {
         }, errorHandler);
     }
 
-
     // Add event listeners on the form.
     function setupFormEventListener() {
 
@@ -393,6 +374,7 @@ $(document).ready(function () {
 
             // Save the file.
             saveFile(filename, content);
+
         });
 
     }
@@ -405,4 +387,5 @@ $(document).ready(function () {
     }
 
     //end fs
+    //
 });
