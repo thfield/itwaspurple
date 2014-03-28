@@ -31,7 +31,7 @@
      inkscape:cx="50"
      inkscape:cy="50"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g4839"
      showgrid="false"
      inkscape:window-width="1134"
      inkscape:window-height="901"
@@ -55,7 +55,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -78,6 +78,12 @@
     <g
        id="g4839"
        transform="translate(-497.99692,2.4653313)">
+      <path
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         d="m 514.75939,1020.7531 c 0.99559,0.1409 9.16952,0.4104 9.16952,0.4104 -1.06201,2.0378 -0.003,6.7092 -0.003,6.7092 14.32896,1.6059 40.21419,1.4573 53.11117,-0.3714 0,0 -0.41152,-6.0089 0.3134,-6.7432 0,0 7.97504,-0.1145 8.24575,-0.2558 1.29108,3.5753 0.19863,15.9661 -0.59588,16.8599 -0.49657,0.8938 -67.36368,1.2418 -70.99314,0.3973 0.59588,-2.4829 1.14978,-13.8283 0.75253,-17.0064 z"
+         id="rect4621"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cssssccccc" />
       <g
          transform="translate(-1.5510204,0)"
          id="g4643">
@@ -94,12 +100,6 @@
            inkscape:connector-curvature="0"
            sodipodi:nodetypes="ccccc" />
       </g>
-      <path
-         style="fill:#000000;fill-opacity:1;stroke:none"
-         d="m 515.19863,1026.1704 c 10.4494,1.4784 68.11303,0.7946 70.39725,-0.3972 1.29108,3.5753 0.19863,10.6952 -0.59588,11.589 -0.49657,0.8938 -67.36368,1.2418 -70.99314,0.3973 0.59588,-2.4829 1.58902,-8.411 1.19177,-11.5891 z"
-         id="rect4621"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccccc" />
     </g>
   </g>
 </svg>

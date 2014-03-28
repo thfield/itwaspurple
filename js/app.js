@@ -260,6 +260,7 @@ $(document).ready(function () {
 
             var delLink = document.createElement('img');
             delLink.src = 'images/delete-small.png';
+            delLink.title = 'delete file';
             delLink.className = 'delete-file';
             li.appendChild(delLink);
 
