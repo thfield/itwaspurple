@@ -176,13 +176,16 @@ button {
     min-height: 20rem;
     background: #ccc;
     border-radius: 0.7rem;
-    font-size: 75%;
+    font-size: 60%;
 }
 .trashcan .card-header {
     height: 0.5rem;
 }
 .trashcan .card-remove {
     display: none;
+}
+.trashcan textarea {
+    font-size: 80%;
 }
 .iwpbutton {
     cursor: pointer;

@@ -37,17 +37,13 @@ $(document).ready(function () {
         newentry();
     });
     $(document).on('click', '.edit', function () {
-        editMode();
-    });
-    $(document).on('click', '.editanimate', function () {
         editModeAnimate();
     });
+    
     $(document).on('click', '.reverse', function () {
-        reverseList();
-    });
-    $(document).on('click', '.reverseanimate', function () {
         reverseListAnimate();
     });
+    
     $(document).on('click', '.delete', function () {
         deleteall();
     });
@@ -74,9 +70,9 @@ $(document).ready(function () {
 
     function reverseList() {
         var list = $(".cards>.card").get().reverse();
-        $(".cards").empty();
+        //$(".cards").empty();
         $.each(list, function (i) {
-            $(".cards").append(list[i]);
+            $("#cardsEnd").before(list[i]);
         });
     };
 
@@ -125,9 +121,10 @@ $(document).ready(function () {
     };
 
     function editModeAnimate() {
-        $('.card-content').fadeOut(400, function () {
+        var $bar = $('.card-content');
+        $bar.fadeOut(400, function () {
             editMode();
-            $('.card-content').fadeIn(400);
+            $bar.fadeIn(400);
         });
     };
 
