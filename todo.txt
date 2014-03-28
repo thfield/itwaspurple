@@ -17,15 +17,8 @@ make entry card uniform size
   drag placeholder same size
 add counter to 140 characters
 tie scrolling to cards, fix controls and trashcan to page
-
-###
-### issues/bugs
-###
-edit with animation only works with addition of even number of new cards
-edit with animation doesn't work when last card is removed
-    if edit doesn't change mode, add a blank card and it should work
-radio buttons don't animate correctly
-
+move delete all outside of trashcan
+change header html to reference single file
 
 ### done
 // add delete button to content areas  

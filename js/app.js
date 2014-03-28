@@ -25,10 +25,13 @@ $(document).ready(function () {
     //
     // called on pageload to copy values from .edit to .display
     //
+    copyContents();
+    function copyContents(){
     $('.card-content').each(function () {
         $foo = $(this).children('.displayContent').text();
         $(this).children('.editContent').val($foo);
     });
+    };
 
     //
     // button-function bindings
@@ -91,7 +94,7 @@ $(document).ready(function () {
     };
 
     function deleteLast() {
-        $('.cards>.card:last-of-type').fadeOut(400, function () {
+        $('.cards>.card:nth-last-of-type(2)').fadeOut(400, function () {
             $(this).appendTo('.trashcan');
             $(this).fadeIn(400);
         });
@@ -160,11 +163,12 @@ $(document).ready(function () {
 
     function populate() {
         var entries = $('#staging>.card').get();
-        $(".cards").empty();
+        $(".cards .card").remove();
         $.each(entries, function (i) {
-            $(".cards").append(entries[i]);
+            $("#cardsEnd").before(entries[i]);
         });
         filenameInput.value = '';
+        copyContents();
     }
 
     // ADAPTED FROM http://blog.teamtreehouse.com/building-an-html5-text-editor-with-the-filesystem-apis
