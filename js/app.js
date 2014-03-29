@@ -2,15 +2,15 @@ $(document).ready(function () {
     function test() {
         $("#test").toggleClass("tested");
         // test function goes here, activated by "test" button
-        $('#staging').empty();
+        //$('#staging').empty();
     };
 
 
     //
     // HTML snippits
     //
-    var itemHTML = '<div class="card"><div class="card-header"><img src="images/delete-small.png" class="card-remove hidden"/></div><div class="card-content"><div class="displayContent"></div><textarea class="editContent hidden"></textarea></div></div>'
-    var itemHTMLedit = '<div class="card"><div class="card-header"><img src="images/delete-small.png" class="card-remove"/></div><div class="card-content"><div class="displayContent hidden"></div><textarea class="editContent"></textarea></div></div>'
+    var itemHTML = '<form class="card"><div class="card-header"><input readonly disabled="true" type="text" name="countdown" size="1" value="" class="counter hidden"><img src="images/delete-small.png" class="card-remove hidden"/></div><div class="card-content"><div class="displayContent"></div><textarea name="editor" class="editContent hidden" onKeyUp="counting(this.form.editor, this.form.countdown)" onFocus="counting(this.form.editor, this.form.countdown)"></textarea></div></form>'
+    var itemHTMLedit = '<form class="card"><div class="card-header"><input readonly disabled="true" type="text" name="countdown" size="1" value="" class="counter"><img src="images/delete-small.png" class="card-remove"/></div><div class="card-content"><div class="displayContent hidden"></div><textarea name="editor" class="editContent" onKeyUp="counting(this.form.editor, this.form.countdown)" onFocus="counting(this.form.editor, this.form.countdown)"></textarea></div></form>'
 
 
     //
@@ -26,11 +26,11 @@ $(document).ready(function () {
     // called on pageload to copy values from .edit to .display
     //
     copyContents();
-    function copyContents(){
-    $('.card-content').each(function () {
-        $foo = $(this).children('.displayContent').text();
-        $(this).children('.editContent').val($foo);
-    });
+    function copyContents() {
+        $('.card-content').each(function () {
+            $foo = $(this).children('.displayContent').text();
+            $(this).children('.editContent').val($foo);
+        });
     };
 
     //
@@ -42,18 +42,18 @@ $(document).ready(function () {
     $(document).on('click', '.edit', function () {
         editModeAnimate();
     });
-    
+
     $(document).on('click', '.reverse', function () {
         reverseListAnimate();
     });
-    
+
     $(document).on('click', '.delete', function () {
         deleteall();
     });
     $(document).on('click', '.tester', function () {
         test();
     });
-    $(document).on('click', '.remove', function () {
+    $(document).on('click', '.trash', function () {
         emptytrash();
     });
     $(document).on('click', '.subtract', function () {
@@ -94,7 +94,8 @@ $(document).ready(function () {
     };
 
     function deleteLast() {
-        $('.cards>.card:nth-last-of-type(2)').fadeOut(400, function () {
+       // $('.cards>.card:nth-last-of-type(2)').fadeOut(400, function () {
+        $('.cards>.card:last-of-type').fadeOut(400, function () {
             $(this).appendTo('.trashcan');
             $(this).fadeIn(400);
         });
@@ -116,7 +117,7 @@ $(document).ready(function () {
         } else {
             $("#cardsEnd").before(itemHTML);
         };
-        
+
     };
 
     function emptytrash() {
@@ -142,6 +143,7 @@ $(document).ready(function () {
         $bar.children('.editContent').toggleClass('hidden');
         $bar.children('.displayContent').toggleClass('hidden');
         $('.card-remove').toggleClass('hidden');
+        $('.counter').toggleClass('hidden');
     };
 
 
@@ -305,7 +307,7 @@ $(document).ready(function () {
         fetchEntries();
     }
 
- 
+
 
     // Save a file in the FileSystem.
     function saveFile(filename, content) {
@@ -390,4 +392,10 @@ $(document).ready(function () {
 
     //end fs
     //
+    
+    
 });
+
+function counting(textarea, readout) {
+    readout.value = textarea.value.length;
+}

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>itwaspurple</title>
+
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="test.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=PT+Mono|Libre+Baskerville|Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <header>
+        <span>itwaspurple</span>
+        <a href="https://github.com/thfield/itwaspurple/tree/gh-pages">view on Github</a>
+        <a href="http://thfield.github.io/">me</a>
+        <a href="bugs.html">bugs</a>
+        <a href="examples.html">examples</a>
+        <a href="about.html">about</a>
+        <a href="itwaspurple.html">app</a>
+    </header>
+
+    <form name="myform">
+        <textarea name="limitedtextarea" onKeyDown="limitText(this.form.limitedtextarea,this.form.countdown,150);" onKeyUp="limitText(this.form.limitedtextarea,this.form.countdown,150);">asdf</textarea>
+        <br>
+        <input readonly type="text" name="countdown" size="3" value="0">
+    </form>
+
+    <div class="wrapper clearfix">
+
+        <div class="controls column quarter">
+            <div class="">
+                <img src="images/edit.png" class="edit iwpbutton" title="edit mode" />
+                <img src="images/reverse.png" class="reverse iwpbutton" title="reverse" />
+            </div>
+            <div class="plusminus">
+                <img src="images/add.png" class="add iwpbutton" title="add new" />
+                <img src="images/subtract.png" class="subtract iwpbutton" title="remove last" />
+            </div>
+            <div class="filebrowser" id="filebrowser">
+                <form action="#" method="POST" id="file-form">
+                    <input type="image" src="images/save.png" class="save iwpbutton" title="save"></input>
+                    <img src="images/load.png" class="load iwpbutton" title="load" />
+                    <input type="text" name="filename" id="filename" placeholder="Filename" />
+                    <div class="files">
+                        <ul id="file-list"></ul>
+                        <div id="messages"></div>
+                    </div>
+                    <div id="staging" class="hidden"></div>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="cards holder column half">
+
+            <form class="card">
+                <div class="card-header">
+                    <input readonly type="text" name="countdown" size="1" value="" class="counter">
+                    <img src="images/delete-small.png" class="card-remove " />
+                </div>
+                <div class="card-content">
+                    <div class="displayContent hidden">Toggle display/edit mode by clicking on the pencil</div>
+                    <textarea name="editor" class="editContent" onKeyUp="counting(this.form.editor, this.form.countdown)" onFocus="counting(this.form.editor, this.form.countdown)"></textarea>
+                </div>
+            </form>
+
+
+
+            <div id="cardsEnd" class="plusminus controls">
+                <img src="images/add.png" class="add iwpbutton" title="add new" />
+                <img src="images/subtract.png" class="subtract iwpbutton" title="remove last" />
+            </div>
+
+        </div>
+
+        <div class="right column quarter flow-opposite">
+
+            <div class="trashcan holder">
+                <img src="images/trash.png" class="trash iwpbutton" title="empty trash" />
+            </div>
+
+            <div class="controls">
+                <img src="images/delete.png" class="delete iwpbutton" title="delete all" />
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div id="test" class="hidden">this is the
+        <button class="tester">test</button>div
+        <br />
+        <button class="edit">Edit Mode</button>
+        <button class="reverse">Reverse</button>
+    </div>
+
+</body>
+
+</html>
