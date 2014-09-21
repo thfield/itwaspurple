@@ -103,6 +103,7 @@ html {
     border-radius: 0.3rem;
     background: #8f5fa5;
     height: 1.5rem;
+    cursor: move;
 }
 .counter {
     height: 0.8rem;

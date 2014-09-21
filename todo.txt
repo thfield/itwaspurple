@@ -13,7 +13,7 @@ make all sizes in rems
 make entry card uniform size
   edit mode and enter mode same size
   drag placeholder same size
-add counter to 140 characters
+
 tie scrolling to cards, fix controls and trashcan to page
 move delete all outside of trashcan
 change header html to reference single file
@@ -27,3 +27,4 @@ change header html to reference single file
 // save/load to local filesystem
   read/write as json?
   save should make trashbin items separate
+// add counter to 140 characters  
