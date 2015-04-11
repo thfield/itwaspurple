@@ -25,10 +25,10 @@
         <span>itwaspurple</span>
         <a href="https://github.com/thfield/itwaspurple/tree/gh-pages">view on Github</a>
         <a href="http://thfield.github.io/">me</a>
-        <a href="bugs.html">bugs</a>
-        <a href="examples.html">examples</a>
-        <a href="about.html">about</a>
-        <a href="itwaspurple.html">app</a>
+        <a class="hidden" href="bugs.html">bugs</a>
+        <a class="hidden" href="examples.html">examples</a>
+        <a class="hidden" href="about.html">about</a>
+        <a class="hidden" href="itwaspurple.html">app</a>
     </header>
 
     <div class="wrapper clearfix">
@@ -70,7 +70,7 @@
 
         </div>
 
-        <div class="right column quarter flow-opposite hidden">
+        <div class="right column quarter flow-opposite ">
         
             <div class="trashcan holder">
                 <img src="images/trash.png" class="trash iwpbutton" title="empty trash" />
@@ -94,6 +94,12 @@
         <div class="card-body">
             <span class="card-read"><%= content %></span>
             <textarea class="card-edit" type="text"><%= content %></textarea>
+        </div>
+    </script>
+
+    <script type="text/template" id="trash_card_template">
+        <div class="card-header">
+            <%= title + " " + order %>
         </div>
     </script>
 

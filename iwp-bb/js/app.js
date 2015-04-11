@@ -9,7 +9,8 @@ $(function () {
         title: "New Card",
         content: "New Content",
         created: Date.now(),
-        edited: null
+        edited: null,
+        trashed: false
       };
     },
     initialize: function(){
@@ -38,30 +39,44 @@ $(function () {
   });
 
   var cardDeck = new CardDeck;
-  //TODO: make separate collection for trash can
+   
 
-  
+
 
   var CardView = Backbone.View.extend({
     tagName: "div",
     attributes: {class:"card"},
     template: _.template( $("#card_template").html() ),
+    trashTemplate: _.template( $("#trash_card_template").html() ),
     initialize: function(){
-      this.listenTo(this.model, 'change', this.render);
+      this.listenTo(this.model, 'change', this.reRender);
       this.listenTo(this.model, 'destroy', this.remove);
-      this.listenTo(dispatcher, 'click', this.toggleEdit);
+      this.listenTo(dispatcher, 'editToggle:click', this.toggleEdit);
     },
     events: {
-      "click img.card-remove": "clear",
+      "click img.card-remove": "delete",
       "click img.edit-button": "toggleEdit",
-      "dblclick .card-read": "toggleEdit"
+      "dblclick .card-read": "edit",
+      "blur .card-edit": "close"
     },
     render: function(){
-        this.$el.html(this.template(this.model.toJSON()));
-        this.input = this.$('.card-edit');
+        if(!this.model.get("trashed")) {
+          this.$el.html(this.template(this.model.toJSON()));
+          this.input = this.$('.card-edit');
+        }else {
+          this.$el.html(this.trashTemplate(this.model.toJSON()));
+          //this.input = this.$('.card-edit');
+        };
         return this;
     },
-
+    reRender: function(){
+      if (this.model.get("trashed")) {
+        console.log("reRender and trashed");
+        this.clear();
+      }else {
+        this.render();
+      };
+    },
     toggleEdit: function() {
       if ( this.$el.hasClass("editing") ) {
         this.close();
@@ -81,41 +96,62 @@ $(function () {
         this.$el.removeClass("editing");
       }
     },
-    updateOnEnter: function(e) {
+    /*updateOnEnter: function(e) {
       if (e.keyCode == 13) this.close();
-    },
+    },*/
     clear: function() {
-      this.model.destroy();
+      //this.model.destroy();
+      this.remove();
+    },
+    delete: function(){
+      this.model.set("trashed", true);
+      this.reRender();
     }
   });
 
 
 
+
+
+
+
   var AppView = Backbone.View.extend({
     el: $("div.wrapper"),
-    initialize: function (options) {
+    initialize: function () {
       console.log("initializing appView");
+      cardDeck.fetch();
+      cardDeck.each(function(model){ 
+        var view = new CardView({ model:model });
+        if(!model.get("trashed")) {
+          $("#cardsEnd").before(view.render().el);
+        }else {
+          $(".trashcan").append(view.render().el);
+        };
+      }); 
+      //this.listenTo(dispatcher, 'delete:click', this.delCard());
     },
     events: {
-      "click img.add": "addCard",
+      "click img.add": "makeCard",
       "click img.subtract": "delCard",
       "click img.edit": "editMode",
       "click img.load": "showList",
       "click img.reverse": "reverseCards",
+      "click img.delete": "unDelete",
     },
-    addCard: function() {
+    makeCard: function() {
       var newCard = new Card();
       cardDeck.add(newCard);
       this.drawCard(newCard);  
     },
-    delCard: function() {
-        cardDeck.last().destroy();
-        //cardDeck.pop(); // change to pop() when implemeting trashcan collection
+    delCard: function(mod) {
+        //cardDeck.last().destroy();
+        //model = model || cardDeck.last(); 
+        model = cardDeck.last(); 
+        model.set("trashed", true);
+        model.save();
     },
     editMode: function() {
-        console.log("entering edit mode");
-        //$(".card").toggleClass("editing");
-        dispatcher.trigger("click");
+        dispatcher.trigger("editToggle:click");
     },
     reverseCards: function() {
         cardDeck.reversed = !cardDeck.reversed;
@@ -132,12 +168,15 @@ $(function () {
             $("#cardsEnd").before(list[i]);
         });
     },
-    drawCard: function(card) {
-      var view = new CardView({ model:card });
-      this.$("#cardsEnd").before(view.render().el);
+    drawCard: function(model) {
+      var view = new CardView({ model:model });
+      $("#cardsEnd").before(view.render().el);
     },
     showList: function() {
       console.log(cardDeck.toJSON());
+    },
+    unDelete: function() {
+      
     }
   });
   
