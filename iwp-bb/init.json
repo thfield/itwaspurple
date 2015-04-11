@@ -1,0 +1,30 @@
+{
+    "cards": [{
+        "title": "Card 1",
+        "msg": "Toggle display/edit mode by clicking on the pencil"
+    }, {
+        "title": "Card 2",
+        "msg": "Reverse the stack of cards by clicking on the cycle arrows"
+    }, {
+        "title": "Card 3",
+        "msg": "Rearrange cards by dragging the header bar"
+    }, {
+        "title": "Card 4",
+        "msg": "Add a card to the bottom/delete the bottom card by clicking on the plus/minus"
+    }, {
+        "title": "Card 5",
+        "msg": "Save the stack of cards by entering a filename and clicking the 'into' arrow"
+    }, {
+        "title": "Card 6",
+        "msg": "Open a saved file by choosing the radio button and clicking the 'out of' arrow"
+    }, {
+        "title": "Card 7",
+        "msg": "Move a card to the trash by entering edit mode and clicking the X in the upper right or by dragging it to the trash"
+    }, {
+        "title": "Card 8",
+        "msg": "Empty the trash by clicking the 'Trash' button"
+    }, {
+        "title": "Card 9",
+        "msg": "Delete all cards by clicking the X inside the trashcan"
+    }]
+}

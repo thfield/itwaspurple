@@ -1,0 +1,10 @@
+<form class="card">
+    <div class="card-header">
+        <input readonly disabled="true" type="text" name="countdown" size="1" value="" class="counter hidden">
+        <img src="images/delete-small.png" class="card-remove hidden" />
+    </div>
+    <div class="card-content">
+        <div class="displayContent"><%= card.msg %></div>
+        <textarea name="editor" class="editContent hidden" onKeyUp="counting(this.form.editor, this.form.countdown)" onFocus="counting(this.form.editor, this.form.countdown)"></textarea>
+    </div>
+</form>
