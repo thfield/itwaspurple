@@ -33,6 +33,9 @@ $(function () {
         return this.last().get('order') + 1;
       };
     },
+    trashed : function() {
+      return this.where({trashed: true});
+    },
     localStorage: new Backbone.LocalStorage("iwp-carddeck"),
     comparator:'order',
     reversed: false
@@ -73,6 +76,7 @@ $(function () {
       if (this.model.get("trashed")) {
         console.log("reRender and trashed");
         this.clear();
+        
       }else {
         this.render();
       };
@@ -120,13 +124,9 @@ $(function () {
     initialize: function () {
       console.log("initializing appView");
       cardDeck.fetch();
+      that = this;
       cardDeck.each(function(model){ 
-        var view = new CardView({ model:model });
-        if(!model.get("trashed")) {
-          $("#cardsEnd").before(view.render().el);
-        }else {
-          $(".trashcan").append(view.render().el);
-        };
+        that.drawCard(model);
       }); 
       //this.listenTo(dispatcher, 'delete:click', this.delCard());
     },
@@ -136,7 +136,7 @@ $(function () {
       "click img.edit": "editMode",
       "click img.load": "showList",
       "click img.reverse": "reverseCards",
-      "click img.delete": "unDelete",
+      "click img.delete": "emptyTrash",
     },
     makeCard: function() {
       var newCard = new Card();
@@ -170,13 +170,18 @@ $(function () {
     },
     drawCard: function(model) {
       var view = new CardView({ model:model });
-      $("#cardsEnd").before(view.render().el);
+        if(!model.get("trashed")) {
+          $("#cardsEnd").before(view.render().el);
+        }else {
+          $(".trashcan").append(view.render().el);
+        };
     },
     showList: function() {
       console.log(cardDeck.toJSON());
     },
-    unDelete: function() {
-      
+    emptyTrash: function() {
+      _.invoke(cardDeck.trashed(), 'destroy');
+      return false;
     }
   });
   
