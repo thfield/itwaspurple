@@ -42,7 +42,11 @@ $(function () {
   });
 
   var cardDeck = new CardDeck;
-   
+  var defaultCards = new CardDeck;
+  defaults.forEach(function(param){
+    var newCard = new Card(param);
+      defaultCards.add(newCard); 
+  });
 
 
 
@@ -76,7 +80,7 @@ $(function () {
       if (this.model.get("trashed")) {
         console.log("reRender and trashed");
         this.clear();
-        
+
       }else {
         this.render();
       };
@@ -115,15 +119,11 @@ $(function () {
 
 
 
-
-
-
-
   var AppView = Backbone.View.extend({
     el: $("div.wrapper"),
     initialize: function () {
       console.log("initializing appView");
-      cardDeck.fetch();
+      //cardDeck.fetch();
       that = this;
       cardDeck.each(function(model){ 
         that.drawCard(model);
@@ -137,6 +137,7 @@ $(function () {
       "click img.load": "showList",
       "click img.reverse": "reverseCards",
       "click img.delete": "emptyTrash",
+      "click div#help": "setDefault",
     },
     makeCard: function() {
       var newCard = new Card();
@@ -182,9 +183,20 @@ $(function () {
     emptyTrash: function() {
       _.invoke(cardDeck.trashed(), 'destroy');
       return false;
+    },
+    setDefault: function() {
+      console.log("setting default");
+      cardDeck.reset();
+      cardDeck = defaultCards;
+      that = this;
+      cardDeck.each(function(model){ 
+        that.drawCard(model);
+      }); 
     }
   });
   
   var dispatcher = _.extend({}, Backbone.Events);
   var appView = new AppView;
+
+
 });
