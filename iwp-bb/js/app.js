@@ -80,7 +80,7 @@ $(function () {
       if (this.model.get("trashed")) {
         console.log("reRender and trashed");
         this.clear();
-
+        this.render();
       }else {
         this.render();
       };
